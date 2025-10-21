@@ -1,0 +1,84 @@
+body{
+    text-align: center;
+    font-family: sans-serif; 
+}
+
+
+.navbar{
+    background-color: #1C1D1E;
+    height: 65px;
+}
+
+.navbar-brand{
+    color: #FFD015;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+/* NOMBRE DE CLASE CORREGIDO: de .tarjate a .tarjeta */
+.tarjeta{ 
+    text-align: center;
+    text-align: justify;
+}
+
+.card{
+    width: 350px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 0;
+    box-shadow: 0 1px 8px 1px  #b3b8e7;
+}
+
+.imagen{
+    width: 60%;
+}
+
+.titulo_inicio{
+    box-sizing: border-box;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #282828;
+}
+
+label{
+    font-weight: bold;
+}
+
+.usuario{
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border-color: #acacac;
+    border-style: solid;
+    outline-color: #5d6dff;
+}
+
+.contraseña{
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border-color: #acacac;
+    border-style: solid;
+    outline-color: #5d6dff;
+
+}
+
+.aviso{
+    font-size: small;
+}
+
+.enviar{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #0018FF;
+    color: white;
+    border-radius:30px;
+    outline-color: #5d6dff;
+    border: 0;
+}
+/* LLAVE EXTRA ELIMINADA */

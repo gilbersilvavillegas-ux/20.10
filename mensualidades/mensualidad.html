@@ -1,0 +1,158 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GestCBO | Mensualidades</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <meta name="title" content="GestCBO | Mensualidades" />
+    <meta name="author" content="Tu Nombre o App" />
+    <meta name="description" content="Lista de atletas con deudas de mensualidades."/>
+    <link rel="preload" href="{% static 'css/adminlte.css' %}" as="style" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/adminlte.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+    {% block extra_css %}{% endblock extra_css %}
+
+  </head>
+  <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+    <div class="app-wrapper">
+      
+            <nav class="app-header navbar navbar-expand bg-body">
+                 </nav>
+      
+            <aside class="app-sidebar shadow" data-bs-theme="dark" style="background-color: #1C1D1E !important;">
+        <div class="sidebar-brand">
+                      </div>
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="navigation"
+              aria-label="Main navigation"
+              data-accordion="false"
+              id="navigation"
+            >
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">
+                      <i class="nav-icon bi bi-speedometer"></i>
+                      <p>HOME</p>
+                    </a>
+                </li>
+
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon  bi bi-clipboard-fill"></i>
+                  <p>
+                    LISTAS
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href= "{% url 'categorias' %}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Categorias</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href= "{% url 'entrenador' %}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Entrenadores</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'atletas' %}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Atletas</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'mensualidad' %}" class="nav-link active">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Mensualidades</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'rendi_atleta' %}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Rendimineto Atleta</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'horarios' %}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Horarios</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              </ul>
+            </nav>
+        </div>
+        </aside>
+        
+            <main class="app-main">
+        <div class="app-content-header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-6"><h3 class="mb-0">Control de Mensualidades</h3></div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="{% url 'index'%}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Mensualidades</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {% block content %}
+        {% endblock content %}
+      
+      </main>
+
+            <footer class="app-footer">
+                </footer>
+    </div>
+
+    {% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VMRO9semRBprVrxjsDzJSwnHNDaZOiCgKbpOfM0SE=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/adminlte.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" integrity="sha256-+m9w80q9WpL4s+k/n4/71W4Yl7n3Z48Q2z15mRk8uXo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'js/alertas.js' %}"></script>
+    {% endblock extra_js %}
+    
+  </body>
+</html>
